@@ -1,16 +1,98 @@
-<!doctype html><html lang="bn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ORTHIR ANGINA FASHION</title><style>
-:root{--g:#123b36;--gold:#c7a66a;--bg:#f7f4ed}*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:system-ui,sans-serif;color:#202522}header{background:var(--g);color:white;padding:18px 5%;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.brand{font-weight:800;letter-spacing:1px}small{color:#e7d5b4;letter-spacing:2px}nav{display:flex;gap:16px}nav a{color:white;text-decoration:none}.hero{background:linear-gradient(115deg,#123b36,#24584e);color:white;padding:50px 6%}.hero h1{font-size:clamp(30px,6vw,52px);margin:12px 0}.hero p{line-height:1.8;max-width:600px}button{background:var(--gold);border:0;padding:12px 18px;border-radius:6px;font-weight:bold}main{padding:30px 5%;max-width:1150px;margin:auto}.tools{display:flex;gap:10px;flex-wrap:wrap;margin:15px 0}input,select{padding:11px;border:1px solid #ccc;border-radius:6px;font:inherit}.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}.card{background:white;border-radius:10px;overflow:hidden}.card img{width:100%;height:230px;object-fit:cover}.info{padding:14px}.price{color:var(--g);font-weight:800;margin:10px 0}.buy{width:100%;cursor:pointer}.note{background:white;border-left:4px solid var(--gold);padding:14px;margin:25px 0;line-height:1.7}footer{background:#102e2a;color:white;text-align:center;padding:22px}
-</style></head><body><header><div><div class="brand">ORTHIR ANGINA FASHION</div><small>STYLE • QUALITY • TRUST</small></div><nav><a href="#home">হোম</a><a href="#products">পণ্য</a><a href="#contact">যোগাযোগ</a></nav></header>
-<section class="hero" id="home"><small>NEW COLLECTION</small><h1>আপনার স্টাইল, আপনার পরিচয়</h1><p>পুরুষ, নারী ও শিশুদের পোশাকের নমুনা কালেকশন দেখুন। ছবিগুলো আপাতত নমুনা—পরে আপনার নিজের পণ্যের ছবি বসানো যাবে।</p><button onclick="document.querySelector('#products').scrollIntoView({behavior:'smooth'})">পণ্য দেখুন</button></section>
-<main id="products"><h2>নমুনা কালেকশন</h2><div class="tools"><input id="q" placeholder="পণ্য খুঁজুন..." oninput="draw()"><select id="cat" onchange="draw()"><option>সব</option><option>পুরুষ</option><option>নারী</option><option>শিশু</option></select></div><div class="products" id="list"></div><div class="note"><b>মনে রাখবেন:</b> এটি প্রাথমিক ওয়েবসাইটের নমুনা। অর্ডার সংরক্ষণ, নিরাপদ Owner/Employee Admin Panel, ডেটাবেজ এবং bKash/Nagad পেমেন্ট এখনো যুক্ত হয়নি। এগুলো পরের ধাপে backend দিয়ে তৈরি করতে হবে।</div><section id="contact"><h2>যোগাযোগ</h2><p>দোকানের ফোন নম্বর ও ঠিকানা পরে যোগ করা হবে।</p></section></main><footer>© <span id="yr"></span> ORTHIR ANGINA FASHION</footer>
-<script>
-const data=[
-['ক্যাজুয়াল শার্ট','পুরুষ',850,'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80'],
-['লেডিস ফ্যাশন','নারী',1200,'https://images.unsplash.com/photo-1583391733956-6c78276477e8?auto=format&fit=crop&w=800&q=80'],
-['শিশুদের পোশাক','শিশু',650,'https://images.unsplash.com/photo-1519238263530-99adde11df2e?auto=format&fit=crop&w=800&q=80'],
-['টি-শার্ট','পুরুষ',550,'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80'],
-['ফ্যাশন কালেকশন','নারী',1450,'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80'],
-['ডেনিম প্যান্ট','পুরুষ',1100,'https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=800&q=80']];
-function draw(){let q=document.getElementById('q').value.toLowerCase(),c=document.getElementById('cat').value;document.getElementById('list').innerHTML=data.filter(x=>(c==='সব'||x[1]===c)&&x[0].toLowerCase().includes(q)).map(x=>`<article class="card"><img src="${x[3]}" alt="${x[0]}" loading="lazy"><div class="info"><small>${x[1]}</small><h3>${x[0]}</h3><div class="price">৳ ${x[2].toLocaleString('en-US')}</div><button class="buy" onclick="alert('অর্ডার সুবিধা পরের ধাপে চালু হবে।')">অর্ডার করুন</button></div></article>`).join('')}document.getElementById('yr').textContent=new Date().getFullYear();draw();
-</script></body></html>
 
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ORTHIR ANGINA FASHION</title>
+<style>
+:root{--green:#123b36;--gold:#c7a66a;--cream:#f7f4ed}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:var(--cream);color:#222}
+header{background:var(--green);color:white;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.logo{font-size:22px;font-weight:bold;color:var(--gold)}
+nav a{color:white;text-decoration:none;margin:8px;font-size:14px}
+.hero{background:linear-gradient(120deg,#123b36,#285c50);color:white;text-align:center;padding:65px 20px}
+.hero h1{font-size:34px;margin:0 0 15px}
+.hero p{font-size:17px}
+.btn{display:inline-block;background:var(--gold);color:#123b36;padding:12px 24px;border-radius:5px;text-decoration:none;font-weight:bold;margin-top:12px}
+.section{padding:38px 5%;text-align:center}
+.section h2{color:var(--green);font-size:27px}
+.categories{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:20px}
+.categories span{background:white;border:1px solid var(--gold);padding:13px 20px;border-radius:25px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
+.card{background:white;border-radius:10px;overflow:hidden;box-shadow:0 3px 12px #00000012;text-align:left}
+.card img{width:100%;height:230px;object-fit:cover}
+.card h3,.card p{margin:12px}
+.price{color:#98733b;font-weight:bold}
+.order{display:block;background:var(--green);color:white;text-align:center;padding:12px;text-decoration:none;margin:12px;border-radius:5px}
+footer{background:var(--green);color:white;text-align:center;padding:28px 15px;margin-top:30px}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">ORTHIR ANGINA FASHION</div>
+<nav>
+<a href="#home">হোম</a>
+<a href="#products">প্রোডাক্ট</a>
+<a href="#contact">যোগাযোগ</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<h1>আপনার স্টাইল, আপনার পরিচয়</h1>
+<p>আধুনিক ফ্যাশনে নিজেকে সাজিয়ে তুলুন</p>
+<a class="btn" href="#products">কেনাকাটা করুন</a>
+</section>
+
+<section class="section">
+<h2>আমাদের কালেকশন</h2>
+<div class="categories">
+<span>👗 Women</span><span>👔 Men</span><span>🧒 Kids</span><span>👜 Accessories</span>
+</div>
+</section>
+
+<section class="section" id="products">
+<h2>জনপ্রিয় প্রোডাক্ট</h2>
+<div class="products">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600" alt="নারীদের পোশাক">
+<h3>Women Fashion Dress</h3><p class="price">৳ ১,২৫০</p>
+<a class="order" href="#contact">অর্ডার করুন</a>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=600" alt="শার্ট">
+<h3>Men's Shirt</h3><p class="price">৳ ৮৫০</p>
+<a class="order" href="#contact">অর্ডার করুন</a>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600" alt="ফ্যাশন পোশাক">
+<h3>Fashion Collection</h3><p class="price">৳ ১,৫০০</p>
+<a class="order" href="#contact">অর্ডার করুন</a>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=600" alt="শিশুদের পোশাক">
+<h3>Kids Collection</h3><p class="price">৳ ৭৫০</p>
+<a class="order" href="#contact">অর্ডার করুন</a>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600" alt="ব্যাগ">
+<h3>Fashion Bag</h3><p class="price">৳ ৯৫০</p>
+<a class="order" href="#contact">অর্ডার করুন</a>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600" alt="নতুন কালেকশন">
+<h3>New Collection</h3><p class="price">৳ ১,১০০</p>
+<a class="order" href="#contact">অর্ডার করুন</a>
+</div>
+</div>
+</section>
+
+<footer id="contact">
+<h2>ORTHIR ANGINA FASHION</h2>
+<p>আপনার পছন্দের ফ্যাশন শপ</p>
+<p>অর্ডার ও যোগাযোগের জন্য আমাদের সঙ্গে যোগাযোগ করুন।</p>
+<p>© 2026 ORTHIR ANGINA FASHION</p>
+</footer>
+</body>
+</html>
