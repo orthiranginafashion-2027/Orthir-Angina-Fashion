@@ -13,3 +13,4 @@ const data=[
 ['ডেনিম প্যান্ট','পুরুষ',1100,'https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=800&q=80']];
 function draw(){let q=document.getElementById('q').value.toLowerCase(),c=document.getElementById('cat').value;document.getElementById('list').innerHTML=data.filter(x=>(c==='সব'||x[1]===c)&&x[0].toLowerCase().includes(q)).map(x=>`<article class="card"><img src="${x[3]}" alt="${x[0]}" loading="lazy"><div class="info"><small>${x[1]}</small><h3>${x[0]}</h3><div class="price">৳ ${x[2].toLocaleString('en-US')}</div><button class="buy" onclick="alert('অর্ডার সুবিধা পরের ধাপে চালু হবে।')">অর্ডার করুন</button></div></article>`).join('')}document.getElementById('yr').textContent=new Date().getFullYear();draw();
 </script></body></html>
+
